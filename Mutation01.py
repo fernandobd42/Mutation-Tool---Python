@@ -3,24 +3,28 @@ import os
 class Mutation():
     def mutate(self):
         i = 0
+        numFile = 0
         data = []
         file = ('./aux/arquivo.java')
 
-        os.system("rm -rf ./Arquivos")
-        os.system("mkdir Arquivos")
+        os.system('rm -rf ./Arquivos/*')
         fileJava = open(file, 'r')
         for line in fileJava:
-            data.append(line)
+            i+=1
+            if(line.find('Hello world') > -1):
+                data.append(i)
 
-        for line in data:
-            i += 1
-            j = 0
-            mutantJava = open('./Arquivos/arquivo'+str(i)+'.java', 'w')
-            for line in data:
-                if (i == j+1 and data[j].find('Hello world') != -1 ):
-                    mutantJava.write(data[j].replace('Hello world', 'Hello Moon', 1))
+        for mutationPosition in data:
+            numFile += 1
+            print('arquivo',numFile)
+            i = 0
+            fileJava = open(file, 'r')
+            mutantFile = open('./Arquivos/arquivo'+str(numFile)+'.java', 'w')
+            for line in fileJava:
+                i += 1
+                if (mutationPosition == i):
+                    mutantFile.write(line.replace('Hello world', 'Hello Moon', 1))
                 else:
-                    mutantJava.write(data[j])
-                j += 1
-            mutantJava.close()
+                    mutantFile.write(line)
+            mutantFile.close()
         fileJava.close()
