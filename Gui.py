@@ -40,6 +40,7 @@ class Gui(QtGui.QMainWindow):
 
     def mutation(self):
         m = Mutation()
+        m.createNewDir()
         m.mutate()
         print('Success of Mutation')
 
