@@ -1,13 +1,24 @@
 import os
+import glob
+import shutil
+from os import makedirs
 
 class Mutation():
+
+    def createNewDir(self):
+        if (os.path.exists('Arquivos')):
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+            shutil.rmtree(current_directory + '/Arquivos/')
+            makedirs("Arquivos")
+        else:
+            makedirs("Arquivos")
+
     def mutate(self):
         i = 0
         numFile = 0
         data = []
         file = ('./aux/arquivo.java')
 
-        os.system('rm -rf ./Arquivos/*')
         fileJava = open(file, 'r')
         for line in fileJava:
             i+=1
