@@ -38,23 +38,22 @@ class Gui(QtGui.QMainWindow):
         btn.move(200,100)
         self.show()
 
-    def mutation(self):
-        m = Mutation()
-        m.createNewDir()
-        m.mutate()
-        print('Success of Mutation')
-
     def exit(self):
         sys.exit()
 
     def open(self):
-        name = QtGui.QFileDialog.getOpenFileName(self, 'Open File')
-        if (name != ""):
-            file = open(name, 'r')
-            print(name)
+        m = Mutation()
+        Mutation.originalJavaFile = QtGui.QFileDialog.getOpenFileName(self, 'Open File')
+
+        if (m.originalJavaFile != ""):
+            print(m.originalJavaFile)
         else:
-            pass
             print('empty')
+
+    def mutation(self):
+        m = Mutation()
+        m.createNewDir()
+        m.mutate()
 
 def run():
     app = QtGui.QApplication(sys.argv)
