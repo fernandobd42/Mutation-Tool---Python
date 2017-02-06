@@ -22,6 +22,7 @@ then, select the directory of the the original program
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/00.png)
 
 **2 (Insert the needed information):**
+
 type the extension of files you want mutate, for exemple: 'java'
 
 type the mutation operator you want to get, for exemple: '==',
