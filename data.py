@@ -1,24 +1,17 @@
 class Data():
-
-    def __init__(self):
-        self.pathProject = ""
-        self.extension = ""
-        self.operator1 = ""
-        self.operator2 = ""
-
     # Methods to set and get values with security
-        # Method to get the path of the program to be tested
-    def getPathProject(self):
+    # Method to set andget the path of the program to be tested
+    def pathProject(self):
         return self.pathProject
 
-    # Method to get the extension of files to be tested
-    def getExtension(self):
+    # Method to set and get the extension of files to be tested
+    def extension(self):
         return self.extension
 
-    # Method to get the original operator
-    def getOperator1(self):
+    # Method to set and get the original operator
+    def operator1(self):
         return self.operator1
 
-    # Method to get the wanted operator
-    def getOperator2(self):
+    # Method to set and get the wanted operator
+    def operator2(self):
         return self.operator2

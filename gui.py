@@ -45,9 +45,9 @@ class Gui(QtGui.QMainWindow):
         p.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
         p.move(50,30)
         p.resize(200,20)
-        Data.getPathProject = QtGui.QFileDialog.getExistingDirectory(None, 'Select a Folder:', 'home/fernando/', QtGui.QFileDialog.ShowDirsOnly)
-        if (Data.getPathProject != ""):
-            path = QtGui.QLabel(Data.getPathProject, self)
+        Data.pathProject = QtGui.QFileDialog.getExistingDirectory(None, 'Select a Folder:', 'home/fernando/', QtGui.QFileDialog.ShowDirsOnly)
+        if (Data.pathProject != ""):
+            path = QtGui.QLabel(Data.pathProject, self)
         else:
             path = QtGui.QLabel('Empty', self)
         path.move(50,50)
@@ -57,7 +57,7 @@ class Gui(QtGui.QMainWindow):
         ext.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
         ext.move(50,100)
         ext.resize(200,20)
-        extt = Data.getExtension = QtGui.QLineEdit(self)
+        extt = Data.extension = QtGui.QLineEdit(self)
         extt.setPlaceholderText("Extension")
         extt.move(300,100)
         extt.resize(150,20)
@@ -66,7 +66,7 @@ class Gui(QtGui.QMainWindow):
         op1.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
         op1.move(50,150)
         op1.resize(200,20)
-        opr1 = Data.getOperator1 = QtGui.QLineEdit(self)
+        opr1 = Data.operator1 = QtGui.QLineEdit(self)
         opr1.setPlaceholderText("Current Operator")
         opr1.move(300,150)
         opr1.resize(150,20)
@@ -80,7 +80,7 @@ class Gui(QtGui.QMainWindow):
         op2.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
         op2.move(50,200)
         op2.resize(200,20)
-        opr2 = Data.getOperator2 = QtGui.QLineEdit(self)
+        opr2 = Data.operator2 = QtGui.QLineEdit(self)
         opr2.setPlaceholderText("Wanted Operator")
         opr2.move(300,200)
         opr2.resize(150,20)
@@ -103,10 +103,10 @@ class Gui(QtGui.QMainWindow):
 
     # method used to add the button on the statusBar of the GUI that will be Data the path of file .java
     def open(self):
-        Data.getPathProject = QtGui.QFileDialog.getExistingDirectory(None, 'Select a Folder:', '/home/fernando/', QtGui.QFileDialog.ShowDirsOnly)
-        if (Data.getPathProject != ""):
-            path = QtGui.QLabel(Data.getPathProject, self)
-            print(Data.getPathProject)
+        Data.pathProject = QtGui.QFileDialog.getExistingDirectory(None, 'Select a Folder:', '/home/fernando/', QtGui.QFileDialog.ShowDirsOnly)
+        if (Data.pathProject != ""):
+            path = QtGui.QLabel(Data.pathProject, self)
+            print(Data.pathProject)
         else:
             path = QtGui.QLabel('empty', self)
         path.move(50,50)
@@ -117,13 +117,10 @@ class Gui(QtGui.QMainWindow):
         d = Data()
         m = Main()
         hd = HandlingDirectories()
-        if (d.getPathProject != ""):
-            if (d.getExtension!= ""):
-                if (d.getOperator1 != ""):
-                    if (d.getOperator2 != ""):
-                        hd.clearDir()
-                        m.mutate()
-                        feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
+        if (d.pathProject != "" and d.extension != "" and d.operator1 != "" and d.operator2 != ""):
+            hd.clearDir()
+            m.mutate()
+            feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
         else:
             feedback = QtGui.QMessageBox.information(self, 'Information', 'Fill in all blanks before performing the mutation test')
         # m.createNewDir()

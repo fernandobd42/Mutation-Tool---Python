@@ -8,8 +8,8 @@ class OperatorLines():
     def getOriginalLines(self):
         path = ""
         #selection structure used to validate the variable 'pathProject' got the path of the project
-        if (Data.getPathProject != ""):
-            path = str(Data.getPathProject)
+        if (Data.pathProject != ""):
+            path = str(Data.pathProject)
             path = '.'
             lines = OperatorLines().getOperators(path)
         else:
@@ -21,8 +21,8 @@ class OperatorLines():
     def getOperators(self, path):
         i = 0
         operatorsLines = []
-        ext = '.'+Data.getExtension.text()
-        op1 = Data.getOperator1.text()
+        ext = '.'+Data.extension.text()
+        op1 = Data.operator1.text()
         #repetition structure used to read all files of the project
         for root, dirs, files in os.walk(path):
             for file in files:

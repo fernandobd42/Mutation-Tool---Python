@@ -6,9 +6,9 @@ class Mutate():
 
     # method used to do the mutation
     def mutate(self, path, mutateLine):
-        ext = Data.getExtension.text()
-        op1 = Data.getOperator1.text()
-        op2 = Data.getOperator2.text()
+        ext = Data.extension.text()
+        op1 = Data.operator1.text()
+        op2 = Data.operator2.text()
         i = 0
         #repetition structure used to swepper the directory 'path'
         for root, dirs, files in os.walk(path):

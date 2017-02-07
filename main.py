@@ -11,7 +11,7 @@ class Main():
     # method used to do the mutations on the file
     def mutate(self):
         num = 0
-        src = unicode(Data.getPathProject)
+        src = unicode(Data.pathProject)
         dst = ""
         lines = OperatorLines().getOriginalLines()
 
