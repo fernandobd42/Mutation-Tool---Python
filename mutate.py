@@ -17,14 +17,14 @@ class Mutate():
                 #selection structure used to get only files with determined extension 'ext'
                 if file.endswith(ext):
                     fileMutate = os.path.join(root, file)
-                    readFile = open(fileMutate, 'r+')
+                    readFile = open(fileMutate, 'r')
                     mutantFile = open(fileMutate, 'r+')
                     #repetition structure used to read each line of readFile
                     for line in readFile:
                         i += 1
                         #selection structure used to get only the line that have 'mutateLine' equal 'i'
                         if (mutateLine == i):
-                            print 'MUTE: Change operator', op1, 'to', op2, 'in line', mutateLine
+                            print 'MUTATE: Replace operator', op1, 'to', op2, 'in line', mutateLine
                             mutantFile.write(line.replace(op1, op2, 1))
                         else:
                             mutantFile.write(line)
