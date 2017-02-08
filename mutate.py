@@ -5,10 +5,7 @@ from data import Data # Import the class Data of file data.py
 class Mutate():
 
     # method used to do the mutation
-    def mutate(self, path, mutateLine):
-        ext = Data.extension.text()
-        op1 = Data.operator1.text()
-        op2 = Data.operator2.text()
+    def mutate(self, path, mutateLine, op1, op2, ext, count):
         i = 0
         #repetition structure used to swepper the directory 'path'
         for root, dirs, files in os.walk(path):
@@ -24,7 +21,7 @@ class Mutate():
                         i += 1
                         #selection structure used to get only the line that have 'mutateLine' equal 'i'
                         if (mutateLine == i):
-                            print 'MUTATE: Replace operator', op1, 'to', op2, 'in line', mutateLine
+                            print count, 'MUTATE: Replace operator', op1, 'to', op2, 'in line', mutateLine
                             mutantFile.write(line.replace(op1, op2, 1))
                         else:
                             mutantFile.write(line)

@@ -1,0 +1,29 @@
+{
+"Operators": [
+    {
+      "op1": "main",
+      "op2": "MUNDO",
+      "ext": "java"
+    },
+    {
+      "op1": "world",
+      "op2": "TERRA",
+      "ext": "java"
+    },
+    {
+      "op1": "==",
+      "op2": "!=",
+      "ext": "java"
+    },
+    {
+      "op1": "Hello",
+      "op2": "OLA",
+      "ext": "java"
+    },
+    {
+      "op1": "self",
+      "op2": "this",
+      "ext": "py"
+    }
+  ]
+}
