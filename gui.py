@@ -13,7 +13,7 @@ class Gui(QtGui.QMainWindow):
 
     def __init__(self): # The __init__ method is the constructor of GUI application
         super(Gui, self).__init__() # The reserved word 'Super' is used to initialize the __init__ method
-        self.setGeometry(300, 100, 600, 350) # the size of GUI
+        self.setGeometry(300, 200, 600, 250) # the size of GUI
         self.setWindowTitle('Test of Mutation') # the title of GUI
         self.setWindowIcon(QtGui.QIcon('./utf.ico')) # the icon of GUI
 
@@ -88,8 +88,8 @@ class Gui(QtGui.QMainWindow):
         btn = QtGui.QPushButton("Mutation", self)
         btn.clicked.connect(self.mutation)
 
-        btn.move(300,250)
-        btn.resize(150,30)
+        btn.move(150, 100)
+        btn.resize(300,100)
 
         self.show()
 
@@ -117,14 +117,12 @@ class Gui(QtGui.QMainWindow):
         d = Data()
         m = Main()
         hd = HandlingDirectories()
-        if (d.pathProject != "" and d.extension != ""):
+        if (d.pathProject != ""):
             hd.clearDir()
             m.mutate()
             feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
         else:
             feedback = QtGui.QMessageBox.information(self, 'Information', 'Fill in all blanks before performing the mutation test')
-        # m.createNewDir()
-        # m.mutate()
 
 # method used to start the program with the GUI
 def run():
