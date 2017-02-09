@@ -1,8 +1,8 @@
 from mutate import Mutate # Import the class Mute of file mute.py
 
-# the class Mutation is used to make a mutation on the files .java in the moment, in future it will be used to make mutation in programs
+# the class Main is used to instance the mutate method of class Mutate
 class Main():
 
-    # method used to do the mutations on the file
+    # method used to do the mutations on the mutated program
     def mutate(self):
         Mutate().mutate()

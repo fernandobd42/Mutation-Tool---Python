@@ -1,16 +1,18 @@
 import os # the 'os' module provides functions to interact with the operating system
 from data import Data # Import the class Data of file data.py
-from getOperators import GetOperator
-from operatorLines import OperatorLines
-from handlingDirectories import HandlingDirectories
+from getOperatorsJson import GetOperator # Import the class GetOperator of file getOperatorsJson.py
+from operatorLines import OperatorLines # Import the class OperatorLines of file operatorLines.py
+from handlingDirectories import HandlingDirectories # Import the class HandlingDirectories of file handlingDirectories.py
 
-# the class Mute is used to do the mutation on the mutate programs
+# the class Mutate is used to do the mutation on the mutated programs
 class Mutate():
+    # method used to do the mutation
     def mutate(self):
         num = 0
         src = unicode(Data.pathProject)
         dst = ""
         operators = GetOperator().getData()
+        #repetition structure used to get the operators in order of the json
         for op in operators['Operators']:
             op1 = op['op1']
             op2 = op['op2']
@@ -30,7 +32,7 @@ class Mutate():
         print('Success of mutation')
 
 
-    # method used to do the mutation
+    # method used to replace operators
     def replace(self, path, mutateLine, op1, op2, ext, count):
         i = 0
         #repetition structure used to swepper the directory 'path'

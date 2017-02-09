@@ -1,7 +1,5 @@
 import os # the 'os' module provides functions to interact with the operating system
 from data import Data # Import the class Data of file data.py
-from getOperators import GetOperator
-import json
 
 # the class OperatorLines is used to get the operators and lines of the original program
 class OperatorLines():
@@ -10,6 +8,7 @@ class OperatorLines():
     def getOperators(self, op1, ext):
         i = 0
         operatorsLines = []
+        #selection structure used to validate if the Data.pathProject is different of 'empty'
         if (Data.pathProject != ""):
             path = str(Data.pathProject)
             #repetition structure used to read all files of the project
@@ -27,5 +26,5 @@ class OperatorLines():
                                 operatorsLines.append(i)
             return operatorsLines
         else:
-            #if the path don't selected, the program return this
+            #if Data.pathProject is empty, the program return this
             print('Path doesn\'t exist')

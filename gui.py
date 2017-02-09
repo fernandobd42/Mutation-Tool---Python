@@ -5,7 +5,7 @@ from PyQt4 import QtGui, QtCore # PyQt is a library used for developing cross pl
 
 from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
-from handlingDirectories import HandlingDirectories
+from handlingDirectories import HandlingDirectories # Import the class HandlingDirectories of file handlingDirectories.py
 
 
 # The class Gui use the QtGui.QMainWindow because is the QMainWindow class that provides the main application window.
@@ -52,39 +52,7 @@ class Gui(QtGui.QMainWindow):
             path = QtGui.QLabel('Empty', self)
         path.move(50,50)
         path.resize(500,20)
-
-        # ext = QtGui.QLabel("Extension of File:", self)
-        # ext.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        # ext.move(50,100)
-        # ext.resize(200,20)
-        # extt = Data.extension = QtGui.QLineEdit(self)
-        # extt.setPlaceholderText("Extension")
-        # extt.move(300,100)
-        # extt.resize(150,20)
-
-        # op1 = QtGui.QLabel("Mutation Operator:", self)
-        # op1.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        # op1.move(50,150)
-        # op1.resize(200,20)
-        # opr1 = Data.operator1 = QtGui.QLineEdit(self)
-        # opr1.setPlaceholderText("Current Operator")
-        # opr1.move(300,150)
-        # opr1.resize(150,20)
-        #
-        # to = QtGui.QLabel("TO", self)
-        # to.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        # to.move(360,175)
-        # to.resize(200,20)
-        #
-        # op2 = QtGui.QLabel("Mutation Operator:", self)
-        # op2.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        # op2.move(50,200)
-        # op2.resize(200,20)
-        # opr2 = Data.operator2 = QtGui.QLineEdit(self)
-        # opr2.setPlaceholderText("Wanted Operator")
-        # opr2.move(300,200)
-        # opr2.resize(150,20)
-
+        
         btn = QtGui.QPushButton("Mutation", self)
         btn.clicked.connect(self.mutation)
 

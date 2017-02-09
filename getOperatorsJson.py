@@ -1,7 +1,9 @@
-import json
+import json # JSON stands for "JavaScript Object Notation", which is a lightweight format for computational data exchange
 from data import Data # Import the class Data of file data.py
 
+# the class GetOperator is used to get the data of json file
 class GetOperator():
+    # method used to get data of json file
     def getData(self):
         with open('operators.json') as data:
             operators = json.load(data)
