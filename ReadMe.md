@@ -12,6 +12,16 @@ Just download of the program using:
 
 Then access the directory of the tool, and run:
 
+**0 (Init the program):**
+
+before run the program, go to the directory of program and edit the file: <b>operators.json</b>
+
+![Json](https://raw.githubusercontent.com/fernandobd42/images/master/00.PNG)
+
+so, insert the operator you want to find on the program where is <b>op1</b>, and insert the operator you want to replace per <b>op1</b>, where is <b>op2<b>, then insert the extension of file you want to find where is <b>ext</b>
+
+Look, it's possible insert how many <b>operators</b> and <b>extension</b> of file you want, just follow the pattern of json file
+
 **1 (Init the program):**
 
 type: python gui.py
@@ -19,18 +29,16 @@ type: python gui.py
 ➜  Mutation-Tool---Python git:(master) ✗ python gui.py
 ```
 then, select the directory of the the original program
-![Init](https://raw.githubusercontent.com/fernandobd42/images/master/00.png)
+![Init](https://raw.githubusercontent.com/fernandobd42/images/master/01.PNG)
 
-**2 (Insert the needed information):**
+**2 (Do the Mutate):**
 
-type the extension of files you want mutate, for exemple: 'java'
+just click on the little button <b>'Mutation'</b>
 
-type the mutation operator you want to get, for exemple: '==',
+![Insert](https://raw.githubusercontent.com/fernandobd42/images/master/02.PNG)
 
-type the mutation operator you want to replace, for exemple: '!=',
-![Insert](https://raw.githubusercontent.com/fernandobd42/images/master/01.png)
+**3 (Result):**
 
-**3 (Click in mutation):**
+See the result on the shell, its possible to see how many operators were found and how many mutants were created
 
-finally click on Mutation
-![Init](https://raw.githubusercontent.com/fernandobd42/images/master/02.png)
+![Init](https://raw.githubusercontent.com/fernandobd42/images/master/03.PNG)
