@@ -22,7 +22,7 @@ Look, it's possible insert how many <b>operators</b> and <b>extension</b> of fil
 
 **1 (INIT THE PROGRAM):**
 
-Access the directory of the tool by shell, and run: </b>python gui.py</b>
+Access the directory of the tool by shell, and run: <b>python gui.py</b><br>
 Obs: you need to use the version 2.7 of python
 ```
 ➜  Mutation-Tool---Python git:(master) ✗ python gui.py
