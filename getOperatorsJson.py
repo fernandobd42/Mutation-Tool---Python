@@ -5,6 +5,6 @@ from data import Data # Import the class Data of file data.py
 class GetOperator():
     # method used to get data of json file
     def getData(self):
-        with open('operators.json') as data:
+        with open(Data.pathJson) as data:
             operators = json.load(data)
         return operators

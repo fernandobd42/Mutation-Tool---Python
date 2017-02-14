@@ -2,19 +2,19 @@
 {
 "Operators": [
     {
-      "op1": "main",
-      "op2": "MUNDO",
-      "ext": "java"
-    },
-    {
-      "op1": "world",
-      "op2": "TERRA",
-      "ext": "java"
-    },
-    {
       "op1": "==",
       "op2": "!=",
       "ext": "java"
+    },
+    {
+      "op1": "while",
+      "op2": "if",
+      "ext": "java"
+    },
+    {
+      "op1": "self",
+      "op2": "THIS",
+      "ext": "py"
     }
   ]
 }
