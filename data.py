@@ -3,3 +3,7 @@ class Data():
     # Method to set and get the path of the program to be tested
     def pathProject(self):
         return self.pathProject
+
+    # Method to set and get the path of json file where has the operators
+    def pathJson(self):
+        return self.pathJson
