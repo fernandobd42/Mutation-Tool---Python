@@ -27,18 +27,22 @@ Obs: you need to use the version 2.7 of python
 ```
 ➜  Mutation-Tool---Python git:(master) ✗ python gui.py
 ```
-Then, select the directory of the original program. In the case, the directory of the program that you want to do the mutation test
+Select the directory of the original program. In the case, the directory of the program that you want to do the mutation test
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/01.PNG)
+
+Then, select the json file. Json file have the operators
+
+![Init](https://raw.githubusercontent.com/fernandobd42/images/master/02.PNG)
 
 **2 (DO THE MUTATE):**
 
 Just click on the little button <b>'Mutation'</b>
 
-![Insert](https://raw.githubusercontent.com/fernandobd42/images/master/02.PNG)
+![Insert](https://raw.githubusercontent.com/fernandobd42/images/master/03.PNG)
 
 **3 (RESULT):**
 
 See the result on the shell, its possible to see how many operators were found and how many mutants were created  
 
-![Init](https://raw.githubusercontent.com/fernandobd42/images/master/03.PNG)
+![Init](https://raw.githubusercontent.com/fernandobd42/images/master/04.PNG)
