@@ -27,11 +27,11 @@ Obs: you need to use the version 2.7 of python
 ```
 ➜  Mutation-Tool---Python git:(master) ✗ python gui.py
 ```
-Select the directory of the original program. In the case, the directory of the program that you want to do the mutation test
+***1.1 (Select the Project):*** Select the directory of the original program. In the case, the directory of the program that you want to do the mutation test
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/01.PNG)
 
-Then, select the json file. Json file have the operators
+***1.2 (Select the Json File):*** Then, select the json file. Json file have the operators
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/02.PNG)
 
