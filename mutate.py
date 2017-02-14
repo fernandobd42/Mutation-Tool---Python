@@ -8,25 +8,27 @@ from handlingDirectories import HandlingDirectories # Import the class HandlingD
 class Mutate():
     # method used to do the mutation
     def mutate(self):
-        num = 0
+        count = 0
         src = unicode(Data.pathProject)
         dst = ""
         operators = GetOperator().getData()
         #repetition structure used to get the operators in order of the json
         for op in operators['Operators']:
+            num = 0
             op1 = op['op1']
             op2 = op['op2']
             ext = op['ext']
             lines = OperatorLines().getOperators(op1, ext)
             #selection structure used to validate the variable 'lines' got the lines to be mutated
             if lines != []:
-                print len(lines), 'Operadores', op1
+                print len(lines), 'lines have the operator', op1
                 #repetition structure used to mutate the mutated projects where needed in accordance with the array 'lines', which has the determined positions (mutateLines) to be mutated
                 for mutateLine in lines:
                     num += 1
-                    dst = os.getcwd()+'/Mutants/Mutant-'+str(num)
+                    count += 1
+                    dst = os.getcwd()+'/Mutants/'+str(count)+'-Mutant-'+str(op1)+'-'+str(num)
                     cloneDir = HandlingDirectories().cloneDir(src, dst)
-                    mutation = Mutate().replace(dst, mutateLine, op1, op2, ext, num)
+                    mutation = Mutate().replace(dst, mutateLine, op1, op2, ext, count)
             else:
                 print 'Dont have the operator',op1 ,'in the program'
         print('Success of mutation')
@@ -49,7 +51,7 @@ class Mutate():
                         i += 1
                         #selection structure used to get only the line that have 'mutateLine' equal 'i'
                         if (mutateLine == i):
-                            print count, 'MUTATE: Replace operator', op1, 'to', op2, 'in line', mutateLine
+                            print count, 'MUTATE: Replace operator', op1, 'to', op2
                             mutantFile.write(line.replace(op1, op2, 1))
                         else:
                             mutantFile.write(line)
