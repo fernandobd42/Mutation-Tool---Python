@@ -1,4 +1,5 @@
 import os # the 'os' module provides functions to interact with the operating system
+import re # the 're' module provides functions to interact with regular expression operations
 from data import Data # Import the class Data of file data.py
 
 # the class OperatorLines is used to get the operators and lines of the original program
@@ -18,12 +19,16 @@ class OperatorLines():
                     if file.endswith(ext):
                         fileMutate = os.path.join(root, file)
                         readFile = open(fileMutate, 'r')
+                        # mutantFile = open(fileMutate, 'r+')
                         #repetion structure used to read each file with determined extension
                         for line in readFile:
                             i+=1
+                            # mutantFile.write(re.sub(' +',' ',line))
                             #selection structure used to get the lines have the current operator
                             if(line.find(op1) > -1):
                                 operatorsLines.append(i)
+                        # mutantFile.close()
+                        readFile.close()
             return operatorsLines
         else:
             #if Data.pathProject is empty, the program return this

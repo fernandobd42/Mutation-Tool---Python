@@ -9,7 +9,6 @@ from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
 from handlingDirectories import HandlingDirectories # Import the class HandlingDirectories of file handlingDirectories.py
 
-
 # The class Gui use the QtGui.QMainWindow because is the QMainWindow class that provides the main application window.
 class Gui(QtGui.QMainWindow):
     d = os.getcwd()
@@ -98,7 +97,6 @@ class Gui(QtGui.QMainWindow):
         path.move(150,25)
         path.resize(500,30)
         print path.text()
-        return path.text()
 
     # method used to get the path of the json file
     def openJson(self):
@@ -110,7 +108,6 @@ class Gui(QtGui.QMainWindow):
         json.move(150,70)
         json.resize(500,30)
         print json.text()
-        return json.text()
 
     # method used to invoke de method 'createNewDir' and 'mutate' to create a new dir and do the mutations
     def mutation(self):
@@ -126,6 +123,7 @@ class Gui(QtGui.QMainWindow):
 
 # method used to start the program with the GUI
 def run():
+    global app;
     app = QtGui.QApplication(sys.argv)
     GUI = Gui()
     GUI.show()
