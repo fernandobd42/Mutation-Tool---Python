@@ -30,6 +30,3 @@ class OperatorLines():
                         # mutantFile.close()
                         readFile.close()
             return operatorsLines
-        else:
-            #if Data.pathProject is empty, the program return this
-            print('Path doesn\'t exist')

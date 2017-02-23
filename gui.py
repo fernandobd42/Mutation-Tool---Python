@@ -7,6 +7,7 @@ from PyQt4 import QtGui, QtCore # PyQt is a library used for developing cross pl
 
 from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
+from getOperatorsJson import GetOperator # Import the class GetOperator of file getOperatorsJson.py
 from handlingDirectories import HandlingDirectories # Import the class HandlingDirectories of file handlingDirectories.py
 
 # The class Gui use the QtGui.QMainWindow because is the QMainWindow class that provides the main application window.
@@ -114,12 +115,24 @@ class Gui(QtGui.QMainWindow):
         d = Data()
         m = Main()
         hd = HandlingDirectories()
+
         if (d.pathProject != "" and d.pathJson != ""):
-            hd.clearDir()
-            m.mutate()
-            feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
+            operators = GetOperator().getData()
+            if (operators.has_key('Operators')):
+                if (operators['Operators'] != []):
+                    op = operators['Operators'][0]
+                    if (op.has_key('nome') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
+                        hd.clearDir()
+                        m.mutate()
+                        feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
+                    else:
+                        feedback = QtGui.QMessageBox.critical(self, 'Information', "The operator is null, please fill in the json file before making the mutation")
+                else:
+                    feedback = QtGui.QMessageBox.critical(self, 'Information', "The file operators.json don't still have no one operator defined")
+            else:
+                feedback = QtGui.QMessageBox.critical(self, 'Information', "The key name of json is incorrect, please set the name exactly as 'Operators'")
         else:
-            feedback = QtGui.QMessageBox.critical(self, 'Information', 'Fill in all blanks before performing the mutation test')
+            feedback = QtGui.QMessageBox.critical(self, 'Information', 'Fill in all blanks (path of project and path of json file) before performing the mutation test')
 
 # method used to start the program with the GUI
 def run():
