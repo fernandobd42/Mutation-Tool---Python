@@ -4,6 +4,7 @@ import sys # The sys module provides a number of functions and variables that ca
 from PyQt4 import QtGui, QtCore # PyQt is a library used for developing cross platform of graphical user interface.
 # The basic GUI widgets are located in the QtGui module.
 # The QtCore module contains non-GUI functionality.
+from log import *
 
 from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
@@ -115,24 +116,42 @@ class Gui(QtGui.QMainWindow):
         d = Data()
         m = Main()
         hd = HandlingDirectories()
+        Log().log(os.getcwd())
+        aux = 0
 
         if (d.pathProject != "" and d.pathJson != ""):
             operators = GetOperator().getData()
+            if (operators == None):
+                feedback = QtGui.QMessageBox.critical(self, 'Information', "The invlaid syntax in json file")
+                logging.error("The invlaid syntax in json file")
+                print("The invlaid syntax in json file")
+                return
             if (operators.has_key('Operators')):
                 if (operators['Operators'] != []):
-                    op = operators['Operators'][0]
-                    if (op.has_key('nome') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
-                        hd.clearDir()
-                        m.mutate()
-                        feedback = QtGui.QMessageBox.information(self, 'Information', 'Congratulations, your mutation test was successful.')
-                    else:
-                        feedback = QtGui.QMessageBox.critical(self, 'Information', "The operator is null, please fill in the json file before making the mutation")
+                    for op in operators['Operators']:
+                        if not (op.has_key('nome') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
+                            feedback = QtGui.QMessageBox.critical(self, 'Information', "The operator is null, please fill in the json file before making the mutation")
+                            logging.error("The operator is null, please fill in the json file before making the mutation")
+                            print("The operator is null, please fill in the json file before making the mutation")
+                            return
+
+                    hd.clearDir()
+                    m.mutate()
+                    feedback = QtGui.QMessageBox.information(self, 'Information', "Congratulations, your mutation test was successful.")
+                    logging.info("Congratulations, your mutation test was successful.")
+                    print("Congratulations, your mutation test was successful.")
                 else:
                     feedback = QtGui.QMessageBox.critical(self, 'Information', "The file operators.json don't still have no one operator defined")
+                    logging.debug("The file operators.json don't still have no one operator defined")
+                    print("The file operators.json don't still have no one operator defined")
             else:
                 feedback = QtGui.QMessageBox.critical(self, 'Information', "The key name of json is incorrect, please set the name exactly as 'Operators'")
+                logging.debug("The key name of json is incorrect, please set the name exactly as 'Operators'")
+                print("The key name of json is incorrect, please set the name exactly as 'Operators'")
         else:
-            feedback = QtGui.QMessageBox.critical(self, 'Information', 'Fill in all blanks (path of project and path of json file) before performing the mutation test')
+            feedback = QtGui.QMessageBox.critical(self, 'Information', "Fill in all blanks (path of project and path of json file) before performing the mutation test")
+            logging.debug("Fill in all blanks (path of project and path of json file) before performing the mutation test")
+            print("Fill in all blanks (path of project and path of json file) before performing the mutation test")
 
 # method used to start the program with the GUI
 def run():
