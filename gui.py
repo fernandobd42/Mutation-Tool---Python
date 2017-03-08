@@ -5,6 +5,7 @@ from PyQt4 import QtGui, QtCore # PyQt is a library used for developing cross pl
 # The basic GUI widgets are located in the QtGui module.
 # The QtCore module contains non-GUI functionality.
 from log import *
+from PyQt4.QtCore import SIGNAL
 
 from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
@@ -99,6 +100,7 @@ class Gui(QtGui.QMainWindow):
         path.move(150,25)
         path.resize(500,30)
         print path.text()
+        return path
 
     # method used to get the path of the json file
     def openJson(self):
@@ -129,7 +131,7 @@ class Gui(QtGui.QMainWindow):
             if (operators.has_key('Operators')):
                 if (operators['Operators'] != []):
                     for op in operators['Operators']:
-                        if not (op.has_key('nome') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
+                        if not (op.has_key('name') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
                             feedback = QtGui.QMessageBox.critical(self, 'Information', "The operator is null, please fill in the json file before making the mutation")
                             logging.error("The operator is null, please fill in the json file before making the mutation")
                             print("The operator is null, please fill in the json file before making the mutation")

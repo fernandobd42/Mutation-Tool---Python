@@ -1,20 +1,58 @@
-
 {
 "Operators": [
     {
-      "op1": "==",
-      "op2": "!=",
+      "name": "REW",
+      "op1": "new javax.swing.JButton()",
+      "op2": "",
       "ext": "java"
     },
     {
-      "op1": "while",
-      "op2": "if",
+    "name": "SWI",
+    "op1": "setVisible(true)",
+    "op2": "setVisible(false)",
+    "ext": "java"
+    },
+    {
+      "name": "REL",
+      "op1": "new java.awt.event.ActionListener()",
+      "op2": "",
       "ext": "java"
     },
     {
-      "op1": "self",
-      "op2": "THIS",
-      "ext": "py"
+      "name": "AIW",
+      "op1": "new javax.swing.JButton()",
+      "op2": "new javax.swing.JButton() new javax.swing.JButton()",
+      "ext": "java"
+    },
+    {
+      "name": "ASW",
+      "op1": "new javax.swing.JButton()",
+      "op2": "new JButton()",
+      "ext": "java"
+    },
+    {
+      "name": "ADL",
+      "op1": "new javax.swing.JButton()",
+      "op2": "new javax.swing.JTextField()",
+      "ext": "java"
+    },
+    {
+      "name": "AAL",
+      "op1": "new java.awt.event.ActionListener()",
+      "op2": "new java.awt.event.ActionListener() new java.awt.event.ActionListener()",
+      "ext": "java"
+    },
+    {
+      "name": "EWAR",
+      "op1": "javax.swing.GroupLayout.PREFERRED_SIZE, 47",
+      "op2": "javax.swing.GroupLayout.PREFERRED_SIZE, 107",
+      "ext": "java"
+    },
+    {
+      "name": "RWAR",
+      "op1": "javax.swing.GroupLayout.PREFERRED_SIZE, 48",
+      "op2": "javax.swing.GroupLayout.PREFERRED_SIZE, 18",
+      "ext": "java"
     }
   ]
 }
