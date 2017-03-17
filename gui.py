@@ -4,8 +4,7 @@ import sys # The sys module provides a number of functions and variables that ca
 from PyQt4 import QtGui, QtCore # PyQt is a library used for developing cross platform of graphical user interface.
 # The basic GUI widgets are located in the QtGui module.
 # The QtCore module contains non-GUI functionality.
-from log import *
-from PyQt4.QtCore import SIGNAL
+from log import * # the 'log' module provides a log of the program behavior
 
 from data import Data # Import the class Data of file data.py
 from main import Main # Import the class Mutation of file Mutation02.py
@@ -16,9 +15,10 @@ from handlingDirectories import HandlingDirectories # Import the class HandlingD
 class Gui(QtGui.QMainWindow):
     d = os.getcwd()
 
+    # method used to init the program
     def __init__(self): # The __init__ method is the constructor of GUI application
         super(Gui, self).__init__() # The reserved word 'Super' is used to initialize the __init__ method
-        self.resize(800,300) # the size of GUI
+        self.resize(1000,400) # the size of GUI
         self.setWindowIcon(QtGui.QIcon('./utf.ico')) # the icon of GUI
         self.setWindowTitle('Test of Mutation') # the title of GUI
         self.setFixedSize(self.size()) # the size of GUI that's fixed
@@ -42,6 +42,12 @@ class Gui(QtGui.QMainWindow):
         openJson.setStatusTip('Open Json')
         openJson.triggered.connect(self.openJson)
 
+        # the openMainFile method used on the statusBar of GUI
+        openMain = QtGui.QAction("&Open Main File", self)
+        openMain.setShortcut("Ctrl+M")
+        openMain.setStatusTip('Open Main File')
+        openMain.triggered.connect(self.openMain)
+
         mainMenu = self.menuBar()
 
         exitMenu = mainMenu.addMenu('&Exit')
@@ -50,6 +56,7 @@ class Gui(QtGui.QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(openFolder)
         fileMenu.addAction(openJson)
+        fileMenu.addAction(openMain)
 
         self.home()
 
@@ -57,19 +64,25 @@ class Gui(QtGui.QMainWindow):
     def home(self):
         p = QtGui.QLabel("Path of Project:", self)
         p.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        p.move(30,30)
+        p.move(30,40)
         p.resize(150,20)
-        self.openFolder()
+        path = self.openFolder()
 
         j = QtGui.QLabel("Path of Json:", self)
         j.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
-        j.move(30,75)
+        j.move(30,80)
         j.resize(150,20)
-        self.openJson()
+        json = self.openJson()
+
+        m = QtGui.QLabel("Path of Main:", self)
+        m.setFont(QtGui.QFont("Times", 12, weight=QtGui.QFont.Bold))
+        m.move(30,120)
+        m.resize(150,20)
+        main = self.openMain()
 
         btn = QtGui.QPushButton("Mutation", self)
         btn.clicked.connect(self.mutation)
-        btn.move(250, 150)
+        btn.move(350, 200)
         btn.resize(300,100)
 
         self.statusBar()
@@ -97,9 +110,9 @@ class Gui(QtGui.QMainWindow):
             path = QtGui.QLabel(Data.pathProject, self)
         else:
             path = QtGui.QLabel('Empty', self)
-        path.move(150,25)
-        path.resize(500,30)
         print path.text()
+        path.move(150,25)
+        path.resize(800, 50)
         return path
 
     # method used to get the path of the json file
@@ -109,9 +122,22 @@ class Gui(QtGui.QMainWindow):
             json = QtGui.QLabel(Data.pathJson, self)
         else:
             json = QtGui.QLabel('Empty', self)
-        json.move(150,70)
-        json.resize(500,30)
         print json.text()
+        json.move(150,65)
+        json.resize(800,50)
+        return json
+
+    # method used to get the path of the Main file
+    def openMain(self):
+        Data.pathMain = QtGui.QFileDialog.getOpenFileName(self, 'Select the Main of Java File')
+        if (Data.pathMain != ""):
+            main = QtGui.QLabel(Data.pathMain, self)
+        else:
+            main = QtGui.QLabel('Empty', self)
+        print main.text()
+        main.move(150,105)
+        main.resize(800,50)
+        return main
 
     # method used to invoke de method 'createNewDir' and 'mutate' to create a new dir and do the mutations
     def mutation(self):
@@ -121,7 +147,7 @@ class Gui(QtGui.QMainWindow):
         Log().log(os.getcwd())
         aux = 0
 
-        if (d.pathProject != "" and d.pathJson != ""):
+        if (d.pathProject != "" and d.pathJson != "" and d.pathMain):
             operators = GetOperator().getData()
             if (operators == None):
                 feedback = QtGui.QMessageBox.critical(self, 'Information', "The invlaid syntax in json file")
@@ -138,6 +164,7 @@ class Gui(QtGui.QMainWindow):
                             return
 
                     hd.clearDir()
+                    hd.clearImages()
                     m.mutate()
                     feedback = QtGui.QMessageBox.information(self, 'Information', "Congratulations, your mutation test was successful.")
                     logging.info("Congratulations, your mutation test was successful.")
@@ -152,8 +179,8 @@ class Gui(QtGui.QMainWindow):
                 print("The key name of json is incorrect, please set the name exactly as 'Operators'")
         else:
             feedback = QtGui.QMessageBox.critical(self, 'Information', "Fill in all blanks (path of project and path of json file) before performing the mutation test")
-            logging.debug("Fill in all blanks (path of project and path of json file) before performing the mutation test")
-            print("Fill in all blanks (path of project and path of json file) before performing the mutation test")
+            logging.debug("Fill in all blanks (path of project, path of json file and path of main java file) before performing the mutation test")
+            print("Fill in all blanks (path of project, path of json file and path of main java file) before performing the mutation test")
 
 # method used to start the program with the GUI
 def run():
