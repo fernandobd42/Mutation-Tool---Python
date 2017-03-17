@@ -157,7 +157,7 @@ class Gui(QtGui.QMainWindow):
             if (operators.has_key('Operators')):
                 if (operators['Operators'] != []):
                     for op in operators['Operators']:
-                        if not (op.has_key('name') and op.has_key('op1') and op.has_key('op2') and op.has_key('ext')):
+                        if not (op.has_key('name') and op.has_key('op1') and op.has_key('op2')):
                             feedback = QtGui.QMessageBox.critical(self, 'Information', "The operator is null, please fill in the json file before making the mutation")
                             logging.error("The operator is null, please fill in the json file before making the mutation")
                             print("The operator is null, please fill in the json file before making the mutation")
