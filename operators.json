@@ -3,20 +3,17 @@
     {
       "name": "EWWAR",
       "op1": "javax.swing.GroupLayout.DEFAULT_SIZE, 256",
-      "op2": "javax.swing.GroupLayout.DEFAULT_SIZE, 512",
-      "ext": "java"
+      "op2": "javax.swing.GroupLayout.DEFAULT_SIZE, 512"
     },
     {
       "name": "MWS",
       "op1": "javax.swing.GroupLayout.PREFERRED_SIZE, 57",
-      "op2": "javax.swing.GroupLayout.PREFERRED_SIZE, 114",
-      "ext": "java"
+      "op2": "javax.swing.GroupLayout.PREFERRED_SIZE, 114"
     },
     {
       "name": "MWA",
       "op1": "new java.awt.Color(204, 204, 204)",
-      "op2": "new java.awt.Color(024, 024, 024)",
-      "ext": "java"
+      "op2": "new java.awt.Color(024, 024, 024)"
     }
   ]
 }
