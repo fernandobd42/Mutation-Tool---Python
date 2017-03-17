@@ -22,7 +22,7 @@ Look, it's possible insert how many <b>operators</b> you want, just follow the p
 
 **1 (EDIT screenshot.py):**
 
-In screenshot.py file alter manually the path of java main file ( the path where have main java file is) where is red, to program run right
+In screenshot.py file alter manually the <b>path</b> of java main file (the current path where is java file that has main class) where is red. Set the right path to program run rightly
 
 ![Screenshot](https://raw.githubusercontent.com/fernandobd42/images/master/01.PNG)
 
@@ -33,15 +33,15 @@ Obs: you need to use the version 2.7 of python
 ```
 ➜  Mutation-Tool---Python git:(master) ✗ python gui.py
 ```
-***1.1 (Select the Project):*** Select the directory of the original program. In the case, the directory of the program that you want to do the mutation test
+***1.1 (Select the Project):*** Select the directory of the <b>original program</b>. In the case, the directory of the program that you want to do the mutation test
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/02.PNG)
 
-***1.2 (Select the Json File):*** Then, select the json file. In case the json file that has the operators
+***1.2 (Select the Json File):*** Then, select the <b>json file</b>. In case the json file that has the operators
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/03.PNG)
 
-***1.3 (Select the Main Java File):*** Then, select the Main java file ( the java file ). In case the java file will be executed
+***1.3 (Select the Main Java File):*** Then, select the <b>main java file</b> (the java file that has the main class). In case the java file will be executed
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/04.PNG)
 
@@ -53,6 +53,6 @@ Just click on the little button <b>'Mutation'</b>
 
 **4 (RESULT):**
 
-Also the result on the shell or in MutateTool.log, it is possible to see how many operators were found and how many mutants were created. Also is possible to see the image of each mutant program running on images directory that locate in the same directory of mutation tool.
+Its possible to see the result on the <b>shell</b> and on <b>MutateTool.log</b>, being possible to see how many operators were found and how many mutants were created. Also it is possible to see the image of each mutant program running on images directory that locate in the same directory of mutation tool.
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/06.PNG)
