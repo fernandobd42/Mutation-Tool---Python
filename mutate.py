@@ -28,7 +28,7 @@ class Mutate():
             name = op['name'].encode('utf-8')
             op1 = op['op1'].encode('utf-8')
             op2 = op['op2'].encode('utf-8')
-            ext = op['ext'].encode('utf-8')
+            ext = 'java'
             lines = OperatorLines().getOperators(op1, ext)
             #selection structure used to validate the variable 'lines' got the lines to be mutated
             if lines != []:
