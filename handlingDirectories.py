@@ -13,6 +13,14 @@ class HandlingDirectories():
         else:
             os.makedirs('Mutants')
 
+    def clearImages(self):
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        if (os.path.exists('Images')):
+            shutil.rmtree(current_directory + '/Images')
+            os.makedirs('Images')
+        else:
+            os.makedirs('Images')
+
     # method used to clone original directory program to the mutate directory
-    def cloneDir(self, src, dest):
-            shutil.copytree(src, dest)
+    def cloneDir(self, src, dst):
+            shutil.copytree(src, dst)
