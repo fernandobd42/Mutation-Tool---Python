@@ -3,7 +3,8 @@ import logging # the 'logging' module defines functions and classes which implem
 
 # the class Log is used to create the log of program
 class Log():
-    # method used to print on the console and write on the 'MutateTool.log' the infos, errors and bugs relationed to program
+
+    # method used to print on the console and write on the 'MutateTool.log' the infos, errors and bugs relationed the program
     def log(self, output_dir):
         logger = logging.getLogger()
         logger.setLevel(logging.DEBUG)
