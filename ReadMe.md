@@ -12,7 +12,9 @@ Just download of the program using:
 
 **0 (EDIT JSON):**
 
-Before run the program, go to the directory of program and edit the file: <b>operators.json</b>
+Before run the program, go to the directory of program and edit the file: <b>operators.json</b>.
+
+Note the first operator with <b>"name"</b>: <b>"Original"</b>, This operator is used to be the model of original program to be compare with the mutants. That's why the <b>"op1"</b> and the <b>"op2"</b> is equal, so do not change the program and result in the model of original progam.
 
 ![Json](https://raw.githubusercontent.com/fernandobd42/images/master/00.PNG)
 
@@ -49,10 +51,14 @@ Obs: you need to use the version 2.7 of python
 
 Just click on the little button <b>'Mutation'</b>
 
-![Insert](https://raw.githubusercontent.com/fernandobd42/images/master/05.PNG)
+![Mutate](https://raw.githubusercontent.com/fernandobd42/images/master/05.PNG)
 
 **4 (RESULT):**
 
 Its possible to see the result on the <b>shell</b> and on <b>MutateTool.log</b>, being possible to see how many operators were found and how many mutants were created. Also it is possible to see the image of each mutant program running on images directory that locate in the same directory of mutation tool.
 
-![Init](https://raw.githubusercontent.com/fernandobd42/images/master/06.PNG)
+![Result](https://raw.githubusercontent.com/fernandobd42/images/master/06.PNG)
+
+See on the below image the result of <b>comparating images</b> do by the tool. First the quantity of mutants that have the same interface of the original program then the name of image that have the same interface to be possible confirm if the tool really is correct
+
+![Result](https://raw.githubusercontent.com/fernandobd42/images/master/07.PNG)
