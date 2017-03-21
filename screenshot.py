@@ -19,7 +19,7 @@ class Screenshot():
 
     # method used to compile and execute java program's, then take and save thescreenshot after kill the program
     def getScreenshot(self, pathMutant, dstImage, nameImage):
-        pathMainFile = pathMutant + '/src/'
+        pathMainFile = pathMutant + '/JavaCAlculator22/src/'
         fileMain = os.path.basename(unicode(Data.pathMain))
 
         java = Compile().compile_execute_java(pathMainFile, fileMain)

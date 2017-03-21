@@ -20,8 +20,4 @@ class Compare():
         else:
             pass
 
-        print "Quantidade de Mutantes Vivos sem alteracao na GUI: " + str(sum(self.count)-1)
-        print "Mutantes: "
-        print self.mutants[1:]
-
         return "Quantidade de Mutantes Vivos sem alteracao na GUI: " + str(sum(self.count)-1) + ".\nEqual Mutants " + str(self.mutants[1:])

@@ -1,7 +1,7 @@
 {
 "Operators": [
     {
-      "name": "EWWAR",
+      "name": "Original",
       "op1": "public static void main",
       "op2": "public static void main"
     },
@@ -24,6 +24,6 @@
       "name": "MWA",
       "op1": "new java.awt.Color(204, 204, 204)",
       "op2": "new java.awt.Color(024, 024, 024)"
-    },
+    }
   ]
 }
