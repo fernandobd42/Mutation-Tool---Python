@@ -3,6 +3,7 @@ import os # the 'os' module provides functions to interact with the operating sy
 import sys # the 'sys' module provides a number of functions and variables that can be used to manipulate different parts of the Python.
 import signal # the 'signal' module provides mechanisms to use signal handlers in Python
 import os.path # the module implements some useful functions on pathnames
+from winlaunch import *
 
 # the class Compile is used to compile and execute java program's
 class Compile():
@@ -14,8 +15,7 @@ class Compile():
         cmdJavac = 'javac ' + fileMain
         javac = subprocess.call(cmdJavac, shell=True)
 
-        cmdJava = 'java ' + os.path.splitext(fileMain)[0]
-        java = subprocess.Popen("exec " + cmdJava, signal.SIGTERM, shell=True)
+        wid, pid = launch('java ' + os.path.splitext(fileMain)[0])
 
-        pid = java.pid
-        return pid
+        win = win_size(wid)
+        return pid, win
