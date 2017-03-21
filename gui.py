@@ -129,7 +129,7 @@ class Gui(QtGui.QMainWindow):
 
     # method used to get the path of the Main file
     def openMain(self):
-        Data.pathMain = QtGui.QFileDialog.getOpenFileName(self, 'Select the Main of Java File')
+        Data.pathMain = QtGui.QFileDialog.getOpenFileName(self, 'Select the Java File that has the Main Class')
         if (Data.pathMain != ""):
             main = QtGui.QLabel(Data.pathMain, self)
         else:
