@@ -2,18 +2,28 @@
 "Operators": [
     {
       "name": "EWWAR",
+      "op1": "public static void main",
+      "op2": "public static void main"
+    },
+    {
+      "name": "EWWAR",
       "op1": "javax.swing.GroupLayout.DEFAULT_SIZE, 256",
       "op2": "javax.swing.GroupLayout.DEFAULT_SIZE, 512"
     },
     {
-      "name": "MWS",
-      "op1": "javax.swing.GroupLayout.PREFERRED_SIZE, 57",
-      "op2": "javax.swing.GroupLayout.PREFERRED_SIZE, 114"
+    "name": "MWS",
+    "op1": "javax.swing.GroupLayout.PREFERED_SIZE, 57",
+    "op2": "javax.swing.GroupLayout.PREFERED_SIZE, 114"
+    },
+    {
+      "name": "EWWAR",
+      "op1": "javax.swing.GroupLayout.DEFAULT_SIZE, 256",
+      "op2": "javax.swing.GroupLayout.DEFAULT_SIZE, 256"
     },
     {
       "name": "MWA",
       "op1": "new java.awt.Color(204, 204, 204)",
       "op2": "new java.awt.Color(024, 024, 024)"
-    }
+    },
   ]
 }

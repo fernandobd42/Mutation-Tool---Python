@@ -7,6 +7,7 @@ from operatorLines import OperatorLines # Import the class OperatorLines of file
 from handlingDirectories import HandlingDirectories # Import the class HandlingDirectories of file handlingDirectories.py
 from log import * # import all of the file log.py
 from screenshot import Screenshot # import the class Screenshot of file screenshot.py
+from compare import Compare
 
 # the class Mutate is used to do the mutation on the mutated programs
 class Mutate():
@@ -20,6 +21,7 @@ class Mutate():
         count = 0
         src = unicode(Data.pathProject)
         dst = ""
+        result = ""
         #geting the data of json
         operators = GetOperator().getData()
         #repetition structure used to read each one operator of the json
@@ -44,10 +46,15 @@ class Mutate():
                     HandlingDirectories().cloneDir(src, pathMutant)
                     Mutate().replace(pathMutant, ext, mutateLine, count, op1, op2)
                     Screenshot().getScreenshot(pathMutant, dstImages, nameImage)
+                    image = dstImages + nameImage + '.png'
+                    self.result = Compare().compare(image)
 
             else:
                 logging.error("No one of the operators past by the json was found in the original program")
                 print("No one of the operators past by the json was found in the original program")
+
+        logging.info(self.result)
+        print(self.result)
 
 
     # method used to replace operators
