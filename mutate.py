@@ -47,7 +47,7 @@ class Mutate():
                     Mutate().replace(pathMutant, ext, mutateLine, count, op1, op2)
                     Screenshot().getScreenshot(pathMutant, dstImages, nameImage)
                     image = dstImages + nameImage + '.png'
-                    self.result = Compare().compare(image)
+                    self.result = Compare().compare(pathOrigin, image)
 
             else:
                 logging.error("No one of the operators past by the json was found in the original program")

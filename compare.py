@@ -7,9 +7,9 @@ class Compare():
     count = []
     mutants = []
 
-    def compare(self, image):
+    def compare(self, pathOrigin, image):
 
-        im1 = Image.open("/home/fernando/Documentos/GIT/Mutation-Tool---Python/Images/imagem1.png")
+        im1 = Image.open(pathOrigin + "/Images/imagem1.png")
         im2 = Image.open(image)
 
         result = ImageChops.difference(im1, im2).getbbox() is None
