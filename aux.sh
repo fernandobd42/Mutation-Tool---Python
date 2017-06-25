@@ -2,7 +2,7 @@ apt-get install -y python-pip python-pil
 add-apt-repository ppa:openjdk-r/ppa
 apt-get update
 apt-get install -y openjdk-8-jdk pyqt4-dev-tools xdotool scrot 
-pip install -y pyscreenshot
+pip install pyscreenshot
 update-alternatives --config java
 sudo apt-add-repository --remove ppa:openjdk-r/ppa
 apt-get update
