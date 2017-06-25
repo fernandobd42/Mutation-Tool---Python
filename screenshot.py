@@ -14,7 +14,7 @@ class Screenshot():
         pathImage = dstImage + nameImage
 
         # grab screenshot and save image file
-        pyscreenshot.grab(bbox=(0,25,a,b), backend='scrot', childprocess=False).save(pathImage + '.png')
+        pyscreenshot.grab(bbox=(0,0,a,b), backend='scrot', childprocess=False).save(pathImage + '.png')
 
 
     # method used to compile and execute java program's, then take and save thescreenshot after kill the program
@@ -27,7 +27,7 @@ class Screenshot():
         time.sleep(1)
 
         a = java[1][0] + 2
-        b = java[1][1] + 49
+        b = java[1][1] + 40
         Screenshot().screenshot(dstImage, nameImage, a, b)
 
         os.kill(int(java[0]), signal.SIGKILL)

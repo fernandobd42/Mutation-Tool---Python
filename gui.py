@@ -171,15 +171,12 @@ class Gui(QtGui.QMainWindow):
                     print("Congratulations, your mutation test was successful.")
                 else:
                     feedback = QtGui.QMessageBox.critical(self, 'Information', "The file operators.json don't still have no one operator defined")
-                    logging.debug("The file operators.json don't still have no one operator defined")
                     print("The file operators.json don't still have no one operator defined")
             else:
                 feedback = QtGui.QMessageBox.critical(self, 'Information', "The key name of json is incorrect, please set the name exactly as 'Operators'")
-                logging.debug("The key name of json is incorrect, please set the name exactly as 'Operators'")
                 print("The key name of json is incorrect, please set the name exactly as 'Operators'")
         else:
             feedback = QtGui.QMessageBox.critical(self, 'Information', "Fill in all blanks (path of project and path of json file) before performing the mutation test")
-            logging.debug("Fill in all blanks (path of project, path of json file and path of main java file) before performing the mutation test")
             print("Fill in all blanks (path of project, path of json file and path of main java file) before performing the mutation test")
 
 # method used to start the program with the GUI

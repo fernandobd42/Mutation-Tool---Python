@@ -4,8 +4,10 @@ import math, operator
 import os.path
 
 class Compare():
-    count = []
-    mutants = []
+    countLive = []
+    countDead = []
+    liveMutants = []
+    deadMutants = []
 
     def compare(self, pathOrigin, image):
 
@@ -15,9 +17,12 @@ class Compare():
         result = ImageChops.difference(im1, im2).getbbox() is None
 
         if result is True:
-            self.count.append(1)
-            self.mutants.append(os.path.basename(image))
+            self.countLive.append(1)
+            self.liveMutants.append(os.path.basename(image))
+            print "VIVO VIVO VIVO",image
         else:
-            pass
-
-        return "Number of muntants live without change in the GUI: " + str(sum(self.count)-1) + ".\nEqual Mutants " + str(self.mutants[1:])
+            self.countDead.append(1)
+            self.deadMutants.append(os.path.basename(image))
+            print "MORTO MORTO MORTO",image
+            
+        return "Number of live mutants, in others words, which don't had change in the GUI: " + str(sum(self.countLive)-1) + ".\nLive Mutants: " + str(self.liveMutants[1:]) + ".\nNumber of dead mutants, in others words, which had change in the GUI: " + str(sum(self.countDead)) + ".\nDead Mutants: " + str(self.deadMutants[0:])
