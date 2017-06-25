@@ -4,11 +4,25 @@
 
 ### On Linux
 
-Just download of the program using:
+### FIRSTLY
+
+Download of the program using:
 
 **HTTP**: git clone https://github.com/fernandobd42/Mutation-Tool---Python.git
 
 **SSH**: git clone git@github.com:fernandobd42/Mutation-Tool---Python.git
+
+### SECONDLY
+
+Run into the directory Mutation-Tool---Python then Install dependencies/requirements, to do this, just open the terminal and run:
+
+**Firstly** sudo chmod +x aux.sh
+
+**Secondly** sudo ./aux.sh
+
+**Thirdly** during the install, type some 'ENTER', stay attentive
+
+### THIRDLY 
 
 **0 (EDIT JSON):**
 
@@ -47,7 +61,7 @@ Obs: you need to use the version 2.7 of python.
 
 ![Init](https://raw.githubusercontent.com/fernandobd42/images/master/04.PNG)
 
-**3 (DO THE MUTATE):**
+**3 (DO THE MUTATION):**
 
 Just click on the little button <b>'Mutation'</b>.
 
@@ -59,6 +73,11 @@ Its possible to see the result on the <b>shell</b> and on <b>MutateTool.log</b>,
 
 ![Result](https://raw.githubusercontent.com/fernandobd42/images/master/06.PNG)
 
-See on the below image the result of comparating images do by the tool. First, the quantity of mutants that have the same interface of the original program. Then, the name of image that have the same interface to be possible confirm if the tool really is correct.
+See on the below image the result of comparating images do by the tool:
+Firstly, see the quantity of mutants that have the same interface of the original program, in other words, which mutants survived. 
+After, see the names of images that have the same interface to be possible confirm whether the tool really is correct. 
+After, see the quantity of mutants that have a different interface of the original program, in other words, which mutants died. 
+After, see the names of images that have the different interface to be possible confirm whether the tool really is correct. 
+Lastly, see how many operators past by json not found in the original program.
 
 ![Result](https://raw.githubusercontent.com/fernandobd42/images/master/07.PNG)
