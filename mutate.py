@@ -22,6 +22,7 @@ class Mutate():
         src = unicode(Data.pathProject)
         dst = ""
         result = ""
+        operatorInexistent = 0
         #geting the data of json
         operators = GetOperator().getData()
         #repetition structure used to read each one operator of the json
@@ -47,14 +48,17 @@ class Mutate():
                     Mutate().replace(pathMutant, ext, mutateLine, count, op1, op2)
                     Screenshot().getScreenshot(pathMutant, dstImages, nameImage)
                     image = dstImages + nameImage + '.png'
-                    self.result = Compare().compare(pathOrigin, image)
+                    result = Compare().compare(pathOrigin, image)
 
             else:
+                operatorInexistent += 1
                 logging.error("No one of the operators past by the json was found in the original program")
                 print("No one of the operators past by the json was found in the original program")
 
-        logging.info(self.result)
-        print(self.result)
+        logging.info(result)
+        logging.info("Number of operators past by json not found in the original program: '%s'" % operatorInexistent)
+        print(result)
+        print("Number of operators past by json not found in the original program: '%s'" % operatorInexistent)
 
 
     # method used to replace operators
