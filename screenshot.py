@@ -27,7 +27,7 @@ class Screenshot():
         time.sleep(1)
 
         a = java[1][0] + 2
-        b = java[1][1] + 40
+        b = java[1][1] + 35
         Screenshot().screenshot(dstImage, nameImage, a, b)
 
         os.kill(int(java[0]), signal.SIGKILL)
